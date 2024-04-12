@@ -29,7 +29,8 @@ class About(models.Model):
 
 
 class Profile(models.Model):
-    about = models.ForeignKey(About,on_delete=models.CASCADE)
+    about = models.ForeignKey(About,
+                            on_delete=models.CASCADE)
     social_name = models.CharField(max_length=10)
     link = models.URLField(max_length=200)
 
