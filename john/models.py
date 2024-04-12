@@ -18,7 +18,7 @@ class Home(models.Model):
 
 class About(models.Model):
     heading = models.CharField(max_length=50)
-    career = models.CharField(max_length=20)
+    career = models.CharField(max_length=25)
     description = models.TextField(blank=False)
     profile_img = models.ImageField(upload_to='profile/')
     
@@ -29,8 +29,7 @@ class About(models.Model):
 
 
 class Profile(models.Model):
-    about = models.ForeignKey(About,
-                                on_delete=models.CASCADE)
+    about = models.ForeignKey(About,on_delete=models.CASCADE)
     social_name = models.CharField(max_length=10)
     link = models.URLField(max_length=200)
 
