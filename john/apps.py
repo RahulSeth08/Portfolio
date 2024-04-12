@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class JohnConfig(AppConfig):
-    name = 'rahul'
+    name = 'john'
