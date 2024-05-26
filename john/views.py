@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Home, About, Profile, Category, Skills, Portfolio
 
+def about_view(request):
+    about = About.objects.prefetch_related('profile_set').get(id=1)  # Adjust the query as needed
+    return render(request, 'index.html', {'about': about})
+    
 def index(request):
 
     # Home

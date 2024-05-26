@@ -71,6 +71,7 @@
                         <div class="about__social">
 
                             {% for profile in about.profile_set.all %}
+                                <!-- <p>{{ profile.social_name }}: {{ profile.link }}</p> -->
                                 <a href="{{ profile.link }}" class="about__social-icon">
                                     <i class='bx bxl-{{ profile.social_name }}' ></i>
                                 </a>
@@ -98,7 +99,7 @@
                     </div>
 
                     <div class="skills__img">
-                        <img src="{% static 'assets/img/skill.jpg' %}" alt="">
+                        <img src="{% static 'assets/img/skilll.png' %}" alt="">
                     </div>
                 </div>
             </section>
