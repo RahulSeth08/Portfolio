@@ -2,11 +2,11 @@ from django.shortcuts import render
 from .models import Home, About, Profile, Category, Skills, Portfolio
 
 def about_view(request):
-    about = About.objects.prefetch_related('profile_set').get(id=1)  # Adjust the query as needed
+    about = About.objects.prefetch_related('profile_set').get(id=1)
     return render(request, 'index.html', {'about': about})
+
     
 def index(request):
-
     # Home
     home = Home.objects.latest('updated')
 
@@ -19,7 +19,6 @@ def index(request):
 
     # Portfolio
     portfolios = Portfolio.objects.all()
-    
 
     context = {
         'home': home,
@@ -28,6 +27,5 @@ def index(request):
         'categories': categories,
         'portfolios': portfolios
     }
-
 
     return render(request, 'index.html', context)
